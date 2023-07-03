@@ -1,0 +1,187 @@
+.content.categories {
+    .bg-light {
+        padding: 5rem 0;
+
+        .categories__block {
+            & .categories__text {
+                font-size: 1.4rem;
+
+                & .categories__link {
+                    text-decoration: none;
+                    color: $gray-light;
+                }
+
+                & span {
+                    color: $gray-light;
+                }
+            }
+        }
+    }
+
+    .categories__list {
+        & .jobs {
+            &__item {
+                &--img {
+                    min-width: 60px;
+                }
+
+                &--text {
+                    padding-left: 2rem;
+                }
+
+                &--btn {
+                    text-align: end;
+
+                    & .btn {
+                        margin: 0 0 .5rem .2rem;
+                    }
+                }
+            }
+
+            & .border--left__yellow {
+                @include border-l(4px, $yellow);
+            }
+
+            & .border--left__green {
+                @include border-l(4px, $green);
+            }
+
+            & .border--left__blue {
+                @include border-l(4px, $blue);
+            }
+
+            & .border--left__red {
+                @include border-l(4px, $red);
+            }
+        }
+
+        &--page {
+            margin-top: 4rem;
+            @include flex-center(row);
+
+            .btn--page {
+                display: inline-block;
+                margin-right: .5rem;
+                background-color: $light;
+                font-size: 1.4rem;
+                padding: 1rem 1.5rem;
+                width: 4rem;
+
+                &:first-child {
+                    margin-left: auto;
+                }
+
+                &:hover {
+                    background-color: $green;
+                    color: $white;
+                }
+            }
+
+            .btn--next {
+                margin-left: auto;
+                width: 6rem;
+            }
+
+            .btn--page--active {
+                background-color: $green;
+                color: $white;
+            }
+        }
+
+        .search__job {
+            .search__category {
+                .search__category--select {
+                    .chosen-container-single {
+                        border: 1px solid $light;
+                        min-height: 50px;
+                        background-color: rgba($color: $light, $alpha: .4);
+                        border-radius: 5px;
+
+                        .chosen-single {
+                            font-size: 1.4rem;
+                            height: 50px;
+                            display: flex;
+                            align-items: center;
+
+                            & div {
+                                top: 50%;
+                                transform: translateY(-50%);
+                                width: 20px;
+                                height: 10px;
+
+                                & b {
+                                    background-image: none;
+                                    border: 1px solid $dark;
+                                    border-top: none;
+                                    border-left: none;
+                                    transform: rotate(45deg);
+                                    width: 7px;
+                                    height: 7px;
+                                    transition: .3s;
+                                }
+                            }
+                        }
+                    }
+
+                    .chosen-with-drop {
+                        .chosen-single {
+                            & div {
+                                & b {
+                                    transform: rotate(224deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.border--item {
+    border: 1px solid $gray-light !important;
+    border-radius: 6px;
+    height: 100%;
+}
+
+.chosen-container-single {
+    height: 100%;
+
+    .chosen-single {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        & div {
+            height: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.grid__find--job {
+    grid-template-columns: 20% 25% auto;
+    column-gap: 5rem;
+
+    .mb-5 {
+        position: relative;
+
+        .job__type--click,
+        .job__type--click2 {
+            cursor: pointer;
+        }
+
+        .job__type, .job__type2  {
+            padding: 2rem 3rem 1rem 2rem;
+            position: sticky;
+            z-index: 1;
+            border-radius: 5px;
+            background-color: $white;
+            visibility: hidden;
+            height: 0;
+            opacity: 0;
+            transition: .3s;
+        }
+    }
+}
